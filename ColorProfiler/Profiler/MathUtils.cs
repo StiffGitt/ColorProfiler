@@ -43,6 +43,28 @@ namespace ColorProfiler.Profiler
             });
             return rxM;
         }
+        public static Matrix<float> GetBradford(ColorProfile InProfile, ColorProfile OutProfile, Matrix<float> M1, Matrix<float> M2)
+        {
+            float Xw1, Yw1, Zw1, Xw2, Yw2, Zw2;
+            Xw1 = InProfile.W.x / InProfile.W.y;
+            Yw1 = 1.0f;
+            Zw1 = (1 - OutProfile.W.x - OutProfile.W.y) / OutProfile.W.y;
+            Xw2 = OutProfile.W.x / OutProfile.W.y;
+            Yw2 = 1.0f;
+            Zw2 = (1 - OutProfile.W.x - OutProfile.W.y) / OutProfile.W.y;
+
+            var W1 = M1 * Vector<float>.Build.Dense(new float[] {Xw1, Yw1, Zw1});
+            var W2 = M2 * Vector<float>.Build.Dense(new float[] {Xw2, Yw2, Zw2});
+
+            var adtM = Matrix<float>.Build.DenseOfArray(new float[,]
+            {
+                {W2[0] / W1[0], 0, 0 },
+                {0, W2[1] / W1[1], 0 },
+                {0, 0, W2[2] / W1[2]},
+            });
+
+            return M2.Inverse() * adtM * M1;
+        }
         public static Vector<float> GammaTransform(Vector<float> c, float gamma)
         {
             Vector<float> result = Vector<float>.Build.Dense(new float[] { 0, 0, 0 });

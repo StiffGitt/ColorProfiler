@@ -1,5 +1,6 @@
 using ColorProfiler.Profiler;
 using System.Configuration;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace ColorProfiler
@@ -84,6 +85,45 @@ namespace ColorProfiler
         private void convertButton_Click(object sender, EventArgs e)
         {
             outPictureBox.Image = profiler.Generate();
+        }
+
+        private void incovertibleCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            profiler.ShowIncovertible = incovertibleCheckBox.Checked;
+            outPictureBox.Image = profiler.Generate();
+        }
+
+        private void bradfordCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            profiler.UseBradford = bradfordCheckBox.Checked;
+            outPictureBox.Image = profiler.Generate();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Images|*.png;*.bmp;*.jpg";
+            ImageFormat format = ImageFormat.Png;
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string ext = System.IO.Path.GetExtension(sfd.FileName);
+                switch (ext)
+                {
+                    case ".jpg":
+                        format = ImageFormat.Jpeg;
+                        break;
+                    case ".bmp":
+                        format = ImageFormat.Bmp;
+                        break;
+                }
+                outPictureBox.Image.Save(sfd.FileName, format);
+            }
+        }
+
+        private void grayoutButton_Click(object sender, EventArgs e)
+        {
+            profiler.GrayOut();
+            inPictureBox.Refresh();
         }
     }
 }

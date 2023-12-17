@@ -37,6 +37,8 @@
             convertButton = new Button();
             saveButton = new Button();
             grayoutButton = new Button();
+            incovertibleCheckBox = new CheckBox();
+            bradfordCheckBox = new CheckBox();
             tableLayoutPanel3 = new TableLayoutPanel();
             groupBox1 = new GroupBox();
             inGammaTextBox = new TextBox();
@@ -146,6 +148,8 @@
             flowLayoutPanel1.Controls.Add(convertButton);
             flowLayoutPanel1.Controls.Add(saveButton);
             flowLayoutPanel1.Controls.Add(grayoutButton);
+            flowLayoutPanel1.Controls.Add(incovertibleCheckBox);
+            flowLayoutPanel1.Controls.Add(bradfordCheckBox);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -182,6 +186,7 @@
             saveButton.TabIndex = 4;
             saveButton.Text = "Save profiled";
             saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
             // 
             // grayoutButton
             // 
@@ -191,6 +196,29 @@
             grayoutButton.TabIndex = 5;
             grayoutButton.Text = "Gray out";
             grayoutButton.UseVisualStyleBackColor = true;
+            grayoutButton.Click += grayoutButton_Click;
+            // 
+            // incovertibleCheckBox
+            // 
+            incovertibleCheckBox.AutoSize = true;
+            incovertibleCheckBox.Location = new Point(427, 3);
+            incovertibleCheckBox.Name = "incovertibleCheckBox";
+            incovertibleCheckBox.Size = new Size(153, 19);
+            incovertibleCheckBox.TabIndex = 6;
+            incovertibleCheckBox.Text = "Show incovertible pixels";
+            incovertibleCheckBox.UseVisualStyleBackColor = true;
+            incovertibleCheckBox.CheckedChanged += incovertibleCheckBox_CheckedChanged;
+            // 
+            // bradfordCheckBox
+            // 
+            bradfordCheckBox.AutoSize = true;
+            bradfordCheckBox.Location = new Point(586, 3);
+            bradfordCheckBox.Name = "bradfordCheckBox";
+            bradfordCheckBox.Size = new Size(131, 19);
+            bradfordCheckBox.TabIndex = 7;
+            bradfordCheckBox.Text = "Use Bradford matrix";
+            bradfordCheckBox.UseVisualStyleBackColor = true;
+            bradfordCheckBox.CheckedChanged += bradfordCheckBox_CheckedChanged;
             // 
             // tableLayoutPanel3
             // 
@@ -612,6 +640,7 @@
             ((System.ComponentModel.ISupportInitialize)outPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)inPictureBox).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -673,5 +702,7 @@
         private Label label11;
         private Label label10;
         private TextBox outGammaTextBox;
+        private CheckBox incovertibleCheckBox;
+        private CheckBox bradfordCheckBox;
     }
 }
