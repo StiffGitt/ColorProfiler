@@ -18,6 +18,22 @@ namespace ColorProfiler
         {
             inProfileComboBox.Items.AddRange(ColorProfile.Profiles.Select(x => x.Name).ToArray());
             outProfileComboBox.Items.AddRange(ColorProfile.Profiles.Select(x => x.Name).ToArray());
+            inProfileComboBox.SelectedIndex = 0;
+            outProfileComboBox.SelectedIndex = 4;
+            string resourcesPath = Directory.GetCurrentDirectory() + "\\..\\..\\..\\Resources\\";
+            string fileName = "gk1.png";
+            SetImg(resourcesPath + fileName);
+        }
+        private void SetImg(string imgPath)
+        {
+            Bitmap bt = new Bitmap(imgPath);
+            Bitmap scaledBitmap = new Bitmap(inPictureBox.Width, inPictureBox.Height);
+            using (Graphics g = Graphics.FromImage(scaledBitmap))
+            {
+                g.DrawImage(bt, 0, 0, inPictureBox.Width, inPictureBox.Height);
+            }
+            inPictureBox.Image = scaledBitmap;
+            profiler.Image = scaledBitmap;
         }
 
         private void loadButton_Click(object sender, EventArgs e)
@@ -30,14 +46,7 @@ namespace ColorProfiler
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string imagePath = openFileDialog.FileName;
-                Bitmap bt = new Bitmap(imagePath);
-                Bitmap scaledBitmap = new Bitmap(inPictureBox.Width, inPictureBox.Height);
-                using (Graphics g = Graphics.FromImage(scaledBitmap))
-                {
-                    g.DrawImage(bt, 0, 0, inPictureBox.Width, inPictureBox.Height);
-                }
-                inPictureBox.Image = scaledBitmap;
-                profiler.Image = scaledBitmap;
+                SetImg(imagePath);
             }
             inPictureBox.Refresh();
         }
@@ -74,7 +83,7 @@ namespace ColorProfiler
 
         private void convertButton_Click(object sender, EventArgs e)
         {
-            profiler.Generate();
+            outPictureBox.Image = profiler.Generate();
         }
     }
 }

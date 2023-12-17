@@ -43,5 +43,16 @@ namespace ColorProfiler.Profiler
             });
             return rxM;
         }
+        public static Vector<float> GammaTransform(Vector<float> c, float gamma)
+        {
+            Vector<float> result = Vector<float>.Build.Dense(new float[] { 0, 0, 0 });
+            result[0] = (float)Math.Pow(c[0], gamma);
+            result[1] = (float)Math.Pow(c[1], gamma);
+            result[2] = (float)Math.Pow(c[2], gamma);
+
+            if (result[0] * result[1] * result[2] < 0)
+                result[0] = 0;
+            return result;
+        }
     }
 }
