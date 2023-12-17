@@ -37,7 +37,9 @@
             convertButton = new Button();
             saveButton = new Button();
             grayoutButton = new Button();
-            flowLayoutPanel2 = new FlowLayoutPanel();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
             inGammaTextBox = new TextBox();
             label6 = new Label();
             inRedXTextBox = new TextBox();
@@ -82,7 +84,9 @@
             ((System.ComponentModel.ISupportInitialize)outPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)inPictureBox).BeginInit();
             flowLayoutPanel1.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -91,14 +95,14 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 2);
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 0, 0);
-            tableLayoutPanel1.Controls.Add(flowLayoutPanel2, 0, 1);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 7.5F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 22.5F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.375F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 28.125F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 62.5F));
             tableLayoutPanel1.Size = new Size(984, 561);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -110,28 +114,28 @@
             tableLayoutPanel2.Controls.Add(outPictureBox, 1, 0);
             tableLayoutPanel2.Controls.Add(inPictureBox, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 171);
+            tableLayoutPanel2.Location = new Point(3, 212);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(978, 387);
+            tableLayoutPanel2.Size = new Size(978, 346);
             tableLayoutPanel2.TabIndex = 0;
             // 
             // outPictureBox
             // 
             outPictureBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            outPictureBox.Location = new Point(525, 9);
+            outPictureBox.Location = new Point(525, 3);
             outPictureBox.Name = "outPictureBox";
-            outPictureBox.Size = new Size(450, 375);
+            outPictureBox.Size = new Size(450, 340);
             outPictureBox.TabIndex = 1;
             outPictureBox.TabStop = false;
             // 
             // inPictureBox
             // 
             inPictureBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            inPictureBox.Location = new Point(3, 9);
+            inPictureBox.Location = new Point(3, 3);
             inPictureBox.Name = "inPictureBox";
-            inPictureBox.Size = new Size(450, 375);
+            inPictureBox.Size = new Size(450, 340);
             inPictureBox.TabIndex = 0;
             inPictureBox.TabStop = false;
             // 
@@ -145,7 +149,7 @@
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(978, 36);
+            flowLayoutPanel1.Size = new Size(978, 46);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // loadButton
@@ -187,363 +191,410 @@
             grayoutButton.Text = "Gray out";
             grayoutButton.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel2
+            // tableLayoutPanel3
             // 
-            flowLayoutPanel2.Controls.Add(inGammaTextBox);
-            flowLayoutPanel2.Controls.Add(label6);
-            flowLayoutPanel2.Controls.Add(inRedXTextBox);
-            flowLayoutPanel2.Controls.Add(inRedYTextBox);
-            flowLayoutPanel2.Controls.Add(label7);
-            flowLayoutPanel2.Controls.Add(label8);
-            flowLayoutPanel2.Controls.Add(label2);
-            flowLayoutPanel2.Controls.Add(label1);
-            flowLayoutPanel2.Controls.Add(label4);
-            flowLayoutPanel2.Controls.Add(inWhiteXTextBox);
-            flowLayoutPanel2.Controls.Add(inWhiteYTextBox);
-            flowLayoutPanel2.Controls.Add(label5);
-            flowLayoutPanel2.Controls.Add(inProfileComboBox);
-            flowLayoutPanel2.Controls.Add(label3);
-            flowLayoutPanel2.Controls.Add(inGreenXTextBox);
-            flowLayoutPanel2.Controls.Add(inGreenYTextBox);
-            flowLayoutPanel2.Controls.Add(label9);
-            flowLayoutPanel2.Controls.Add(inBlueXTextBox);
-            flowLayoutPanel2.Controls.Add(inBlueYTextBox);
-            flowLayoutPanel2.Controls.Add(label10);
-            flowLayoutPanel2.Controls.Add(outGammaTextBox);
-            flowLayoutPanel2.Controls.Add(label11);
-            flowLayoutPanel2.Controls.Add(outRedXTextBox);
-            flowLayoutPanel2.Controls.Add(outRedYTextBox);
-            flowLayoutPanel2.Controls.Add(label12);
-            flowLayoutPanel2.Controls.Add(label13);
-            flowLayoutPanel2.Controls.Add(label14);
-            flowLayoutPanel2.Controls.Add(label15);
-            flowLayoutPanel2.Controls.Add(outWhiteXTextBox);
-            flowLayoutPanel2.Controls.Add(outWhiteYTextBox);
-            flowLayoutPanel2.Controls.Add(label16);
-            flowLayoutPanel2.Controls.Add(outProfileComboBox);
-            flowLayoutPanel2.Controls.Add(label17);
-            flowLayoutPanel2.Controls.Add(outGreenXTextBox);
-            flowLayoutPanel2.Controls.Add(outGreenYTextBox);
-            flowLayoutPanel2.Controls.Add(label18);
-            flowLayoutPanel2.Controls.Add(outBlueXTextBox);
-            flowLayoutPanel2.Controls.Add(outBlueYTextBox);
-            flowLayoutPanel2.Controls.Add(label19);
-            flowLayoutPanel2.Dock = DockStyle.Fill;
-            flowLayoutPanel2.Location = new Point(3, 45);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(978, 120);
-            flowLayoutPanel2.TabIndex = 2;
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Controls.Add(groupBox1, 0, 0);
+            tableLayoutPanel3.Controls.Add(groupBox2, 1, 0);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(3, 55);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Size = new Size(978, 151);
+            tableLayoutPanel3.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(inGammaTextBox);
+            groupBox1.Controls.Add(inProfileComboBox);
+            groupBox1.Controls.Add(inRedXTextBox);
+            groupBox1.Controls.Add(inRedYTextBox);
+            groupBox1.Controls.Add(inWhiteYTextBox);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(inGreenXTextBox);
+            groupBox1.Controls.Add(inGreenYTextBox);
+            groupBox1.Controls.Add(inBlueXTextBox);
+            groupBox1.Controls.Add(inBlueYTextBox);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(label16);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label14);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(inWhiteXTextBox);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Dock = DockStyle.Fill;
+            groupBox1.Location = new Point(3, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(483, 145);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(label19);
+            groupBox2.Controls.Add(outBlueYTextBox);
+            groupBox2.Controls.Add(outBlueXTextBox);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(label18);
+            groupBox2.Controls.Add(outGreenYTextBox);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(outGreenXTextBox);
+            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(label17);
+            groupBox2.Controls.Add(outProfileComboBox);
+            groupBox2.Controls.Add(outWhiteYTextBox);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(outWhiteXTextBox);
+            groupBox2.Controls.Add(label15);
+            groupBox2.Controls.Add(label13);
+            groupBox2.Controls.Add(outRedYTextBox);
+            groupBox2.Controls.Add(outRedXTextBox);
+            groupBox2.Controls.Add(outGammaTextBox);
+            groupBox2.Dock = DockStyle.Fill;
+            groupBox2.Location = new Point(492, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(483, 145);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "groupBox2";
             // 
             // inGammaTextBox
             // 
-            inGammaTextBox.Location = new Point(3, 3);
+            inGammaTextBox.Location = new Point(64, 52);
             inGammaTextBox.Name = "inGammaTextBox";
             inGammaTextBox.Size = new Size(100, 23);
-            inGammaTextBox.TabIndex = 2;
+            inGammaTextBox.TabIndex = 41;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(109, 0);
+            label6.Location = new Point(74, 81);
             label6.Name = "label6";
             label6.Size = new Size(13, 15);
-            label6.TabIndex = 12;
+            label6.TabIndex = 51;
             label6.Text = "x";
             // 
             // inRedXTextBox
             // 
-            inRedXTextBox.Location = new Point(128, 3);
+            inRedXTextBox.Location = new Point(259, 32);
             inRedXTextBox.Name = "inRedXTextBox";
             inRedXTextBox.Size = new Size(44, 23);
-            inRedXTextBox.TabIndex = 10;
+            inRedXTextBox.TabIndex = 49;
             // 
             // inRedYTextBox
             // 
-            inRedYTextBox.Location = new Point(178, 3);
+            inRedYTextBox.Location = new Point(309, 32);
             inRedYTextBox.Name = "inRedYTextBox";
             inRedYTextBox.Size = new Size(44, 23);
-            inRedYTextBox.TabIndex = 11;
+            inRedYTextBox.TabIndex = 50;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(228, 0);
+            label7.Location = new Point(126, 81);
             label7.Name = "label7";
             label7.Size = new Size(13, 15);
-            label7.TabIndex = 13;
+            label7.TabIndex = 52;
             label7.Text = "y";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(247, 0);
+            label8.Location = new Point(223, 35);
             label8.Name = "label8";
             label8.Size = new Size(30, 15);
-            label8.TabIndex = 9;
+            label8.TabIndex = 48;
             label8.Text = "Red:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(283, 0);
+            label2.Location = new Point(6, 58);
             label2.Name = "label2";
             label2.Size = new Size(52, 15);
-            label2.TabIndex = 3;
+            label2.TabIndex = 42;
             label2.Text = "Gamma:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(341, 0);
+            label1.Location = new Point(276, 95);
             label1.Name = "label1";
             label1.Size = new Size(0, 15);
-            label1.TabIndex = 1;
+            label1.TabIndex = 40;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(347, 0);
+            label4.Location = new Point(278, 14);
             label4.Name = "label4";
             label4.Size = new Size(13, 15);
-            label4.TabIndex = 7;
+            label4.TabIndex = 46;
             label4.Text = "x";
             // 
             // inWhiteXTextBox
             // 
-            inWhiteXTextBox.Location = new Point(366, 3);
+            inWhiteXTextBox.Location = new Point(64, 92);
             inWhiteXTextBox.Name = "inWhiteXTextBox";
             inWhiteXTextBox.Size = new Size(44, 23);
-            inWhiteXTextBox.TabIndex = 5;
+            inWhiteXTextBox.TabIndex = 44;
             // 
             // inWhiteYTextBox
             // 
-            inWhiteYTextBox.Location = new Point(416, 3);
+            inWhiteYTextBox.Location = new Point(120, 92);
             inWhiteYTextBox.Name = "inWhiteYTextBox";
             inWhiteYTextBox.Size = new Size(44, 23);
-            inWhiteYTextBox.TabIndex = 6;
+            inWhiteYTextBox.TabIndex = 45;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(466, 0);
+            label5.Location = new Point(367, 14);
             label5.Name = "label5";
             label5.Size = new Size(13, 15);
-            label5.TabIndex = 8;
+            label5.TabIndex = 47;
             label5.Text = "y";
             // 
             // inProfileComboBox
             // 
             inProfileComboBox.FormattingEnabled = true;
-            inProfileComboBox.Location = new Point(485, 3);
+            inProfileComboBox.Location = new Point(6, 22);
             inProfileComboBox.Name = "inProfileComboBox";
             inProfileComboBox.Size = new Size(180, 23);
-            inProfileComboBox.TabIndex = 0;
+            inProfileComboBox.TabIndex = 39;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(671, 0);
+            label3.Location = new Point(6, 95);
             label3.Name = "label3";
             label3.Size = new Size(41, 15);
-            label3.TabIndex = 4;
+            label3.TabIndex = 43;
             label3.Text = "White:";
             // 
             // inGreenXTextBox
             // 
-            inGreenXTextBox.Location = new Point(718, 3);
+            inGreenXTextBox.Location = new Point(259, 61);
             inGreenXTextBox.Name = "inGreenXTextBox";
             inGreenXTextBox.Size = new Size(44, 23);
-            inGreenXTextBox.TabIndex = 15;
+            inGreenXTextBox.TabIndex = 54;
+            inGreenXTextBox.TextChanged += inGreenXTextBox_TextChanged;
             // 
             // inGreenYTextBox
             // 
-            inGreenYTextBox.Location = new Point(768, 3);
+            inGreenYTextBox.Location = new Point(309, 63);
             inGreenYTextBox.Name = "inGreenYTextBox";
             inGreenYTextBox.Size = new Size(44, 23);
-            inGreenYTextBox.TabIndex = 16;
+            inGreenYTextBox.TabIndex = 55;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(818, 0);
+            label9.Location = new Point(212, 69);
             label9.Name = "label9";
             label9.Size = new Size(41, 15);
-            label9.TabIndex = 14;
+            label9.TabIndex = 53;
             label9.Text = "Green:";
             // 
             // inBlueXTextBox
             // 
-            inBlueXTextBox.Location = new Point(865, 3);
+            inBlueXTextBox.Location = new Point(259, 92);
             inBlueXTextBox.Name = "inBlueXTextBox";
             inBlueXTextBox.Size = new Size(44, 23);
-            inBlueXTextBox.TabIndex = 18;
+            inBlueXTextBox.TabIndex = 57;
             // 
             // inBlueYTextBox
             // 
-            inBlueYTextBox.Location = new Point(915, 3);
+            inBlueYTextBox.Location = new Point(309, 92);
             inBlueYTextBox.Name = "inBlueYTextBox";
             inBlueYTextBox.Size = new Size(44, 23);
-            inBlueYTextBox.TabIndex = 19;
+            inBlueYTextBox.TabIndex = 58;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(3, 29);
+            label10.Location = new Point(220, 95);
             label10.Name = "label10";
             label10.Size = new Size(33, 15);
-            label10.TabIndex = 17;
+            label10.TabIndex = 56;
             label10.Text = "Blue:";
             // 
             // outGammaTextBox
             // 
-            outGammaTextBox.Location = new Point(42, 32);
+            outGammaTextBox.Location = new Point(62, 55);
             outGammaTextBox.Name = "outGammaTextBox";
             outGammaTextBox.Size = new Size(100, 23);
-            outGammaTextBox.TabIndex = 21;
+            outGammaTextBox.TabIndex = 60;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(148, 29);
+            label11.Location = new Point(77, 77);
             label11.Name = "label11";
             label11.Size = new Size(13, 15);
-            label11.TabIndex = 31;
+            label11.TabIndex = 70;
             label11.Text = "x";
             // 
             // outRedXTextBox
             // 
-            outRedXTextBox.Location = new Point(167, 32);
+            outRedXTextBox.Location = new Point(300, 32);
             outRedXTextBox.Name = "outRedXTextBox";
             outRedXTextBox.Size = new Size(44, 23);
-            outRedXTextBox.TabIndex = 29;
+            outRedXTextBox.TabIndex = 68;
             // 
             // outRedYTextBox
             // 
-            outRedYTextBox.Location = new Point(217, 32);
+            outRedYTextBox.Location = new Point(350, 32);
             outRedYTextBox.Name = "outRedYTextBox";
             outRedYTextBox.Size = new Size(44, 23);
-            outRedYTextBox.TabIndex = 30;
+            outRedYTextBox.TabIndex = 69;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(267, 29);
+            label12.Location = new Point(139, 77);
             label12.Name = "label12";
             label12.Size = new Size(13, 15);
-            label12.TabIndex = 32;
+            label12.TabIndex = 71;
             label12.Text = "y";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(286, 29);
+            label13.Location = new Point(255, 35);
             label13.Name = "label13";
             label13.Size = new Size(30, 15);
-            label13.TabIndex = 28;
+            label13.TabIndex = 67;
             label13.Text = "Red:";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(322, 29);
+            label14.Location = new Point(6, 55);
             label14.Name = "label14";
             label14.Size = new Size(52, 15);
-            label14.TabIndex = 22;
+            label14.TabIndex = 61;
             label14.Text = "Gamma:";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(380, 29);
+            label15.Location = new Point(316, 14);
             label15.Name = "label15";
             label15.Size = new Size(13, 15);
-            label15.TabIndex = 26;
+            label15.TabIndex = 65;
             label15.Text = "x";
             // 
             // outWhiteXTextBox
             // 
-            outWhiteXTextBox.Location = new Point(399, 32);
+            outWhiteXTextBox.Location = new Point(63, 99);
             outWhiteXTextBox.Name = "outWhiteXTextBox";
             outWhiteXTextBox.Size = new Size(44, 23);
-            outWhiteXTextBox.TabIndex = 24;
+            outWhiteXTextBox.TabIndex = 63;
             // 
             // outWhiteYTextBox
             // 
-            outWhiteYTextBox.Location = new Point(449, 32);
+            outWhiteYTextBox.Location = new Point(113, 99);
             outWhiteYTextBox.Name = "outWhiteYTextBox";
             outWhiteYTextBox.Size = new Size(44, 23);
-            outWhiteYTextBox.TabIndex = 25;
+            outWhiteYTextBox.TabIndex = 64;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(499, 29);
+            label16.Location = new Point(327, 14);
             label16.Name = "label16";
             label16.Size = new Size(13, 15);
-            label16.TabIndex = 27;
+            label16.TabIndex = 66;
             label16.Text = "y";
             // 
             // outProfileComboBox
             // 
             outProfileComboBox.FormattingEnabled = true;
-            outProfileComboBox.Location = new Point(518, 32);
+            outProfileComboBox.Location = new Point(6, 22);
             outProfileComboBox.Name = "outProfileComboBox";
             outProfileComboBox.Size = new Size(180, 23);
-            outProfileComboBox.TabIndex = 20;
+            outProfileComboBox.TabIndex = 59;
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(704, 29);
+            label17.Location = new Point(16, 102);
             label17.Name = "label17";
             label17.Size = new Size(41, 15);
-            label17.TabIndex = 23;
+            label17.TabIndex = 62;
             label17.Text = "White:";
             // 
             // outGreenXTextBox
             // 
-            outGreenXTextBox.Location = new Point(751, 32);
+            outGreenXTextBox.Location = new Point(300, 61);
             outGreenXTextBox.Name = "outGreenXTextBox";
             outGreenXTextBox.Size = new Size(44, 23);
-            outGreenXTextBox.TabIndex = 34;
+            outGreenXTextBox.TabIndex = 73;
             // 
             // outGreenYTextBox
             // 
-            outGreenYTextBox.Location = new Point(801, 32);
+            outGreenYTextBox.Location = new Point(350, 61);
             outGreenYTextBox.Name = "outGreenYTextBox";
             outGreenYTextBox.Size = new Size(44, 23);
-            outGreenYTextBox.TabIndex = 35;
+            outGreenYTextBox.TabIndex = 74;
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(851, 29);
+            label18.Location = new Point(255, 66);
             label18.Name = "label18";
             label18.Size = new Size(41, 15);
-            label18.TabIndex = 33;
+            label18.TabIndex = 72;
             label18.Text = "Green:";
             // 
             // outBlueXTextBox
             // 
-            outBlueXTextBox.Location = new Point(898, 32);
+            outBlueXTextBox.Location = new Point(300, 90);
             outBlueXTextBox.Name = "outBlueXTextBox";
             outBlueXTextBox.Size = new Size(44, 23);
-            outBlueXTextBox.TabIndex = 37;
+            outBlueXTextBox.TabIndex = 76;
             // 
             // outBlueYTextBox
             // 
-            outBlueYTextBox.Location = new Point(3, 61);
+            outBlueYTextBox.Location = new Point(350, 90);
             outBlueYTextBox.Name = "outBlueYTextBox";
             outBlueYTextBox.Size = new Size(44, 23);
-            outBlueYTextBox.TabIndex = 38;
+            outBlueYTextBox.TabIndex = 77;
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(53, 58);
+            label19.Location = new Point(255, 95);
             label19.Name = "label19";
             label19.Size = new Size(33, 15);
-            label19.TabIndex = 36;
+            label19.TabIndex = 75;
             label19.Text = "Blue:";
             // 
             // Form1
@@ -559,8 +610,11 @@
             ((System.ComponentModel.ISupportInitialize)outPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)inPictureBox).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel2.ResumeLayout(false);
-            flowLayoutPanel2.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -575,45 +629,47 @@
         private Button convertButton;
         private Button saveButton;
         private Button grayoutButton;
-        private FlowLayoutPanel flowLayoutPanel2;
+        private TableLayoutPanel tableLayoutPanel3;
+        private GroupBox groupBox1;
         private ComboBox inProfileComboBox;
-        private TextBox inGammaTextBox;
-        private Label label2;
-        private Label label1;
-        private TextBox inWhiteXTextBox;
-        private Label label3;
         private TextBox inWhiteYTextBox;
-        private Label label4;
-        private Label label6;
-        private TextBox inRedXTextBox;
-        private TextBox inRedYTextBox;
-        private Label label7;
-        private Label label8;
-        private Label label5;
+        private Label label3;
         private TextBox inGreenXTextBox;
+        private GroupBox groupBox2;
+        private TextBox inGammaTextBox;
+        private Label label6;
+        private Label label19;
+        private TextBox inRedXTextBox;
+        private TextBox outBlueYTextBox;
+        private TextBox inRedYTextBox;
+        private TextBox outBlueXTextBox;
+        private Label label7;
+        private Label label18;
+        private Label label8;
+        private TextBox outGreenYTextBox;
+        private Label label2;
+        private TextBox outGreenXTextBox;
+        private Label label1;
+        private Label label17;
+        private Label label4;
+        private ComboBox outProfileComboBox;
+        private TextBox inWhiteXTextBox;
+        private Label label16;
+        private TextBox outWhiteYTextBox;
+        private Label label5;
+        private TextBox outWhiteXTextBox;
+        private Label label15;
+        private Label label14;
+        private Label label13;
         private TextBox inGreenYTextBox;
+        private Label label12;
         private Label label9;
+        private TextBox outRedYTextBox;
         private TextBox inBlueXTextBox;
+        private TextBox outRedXTextBox;
         private TextBox inBlueYTextBox;
+        private Label label11;
         private Label label10;
         private TextBox outGammaTextBox;
-        private Label label11;
-        private TextBox outRedXTextBox;
-        private TextBox outRedYTextBox;
-        private Label label12;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private TextBox outWhiteXTextBox;
-        private TextBox outWhiteYTextBox;
-        private Label label16;
-        private ComboBox outProfileComboBox;
-        private Label label17;
-        private TextBox outGreenXTextBox;
-        private TextBox outGreenYTextBox;
-        private Label label18;
-        private TextBox outBlueXTextBox;
-        private TextBox outBlueYTextBox;
-        private Label label19;
     }
 }

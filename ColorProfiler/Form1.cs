@@ -19,5 +19,10 @@ namespace ColorProfiler
         {
 
         }
+
+        private void inGreenXTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
